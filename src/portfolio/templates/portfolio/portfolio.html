@@ -1,0 +1,25 @@
+{% extends "portfolio/base.html" %}
+
+{% block content %}
+  <div class="row">
+  {% for project in projects %}
+      <div class="col-md-6">
+        <div class="mb-6">
+          <div class="card-body box-shadow">
+            <i class="{{ project.icon }}" style="font-size:32px"></i>
+            <h4 class="text-center">{{ project.title }}</h4>
+            <p class="card-text">{{ project.content }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+					<a href="{% url project.url %}">View</a>
+				</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">{{ project.title }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+{% endblock content %}
