@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import ModuleFeedView
 
 urlpatterns = [
-    path('', views.index, name='portfolio-index'),
+    path('', ModuleFeedView.as_view(), name='portfolio-index'),
 ]

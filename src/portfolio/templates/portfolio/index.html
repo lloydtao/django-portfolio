@@ -1,5 +1,25 @@
 {% extends "portfolio/base.html" %}
 
 {% block content %}
-	<h1>Hello, world!</h1>
+  <div class="row">
+  {% for module in modules %}
+      <div class="col-md-6">
+        <div class="mb-6">
+          <div class="card-body box-shadow">
+            <i class="{{ module.icon }}" style="font-size:32px"></i>
+            <h4 class="text-center">{{ module.title }}</h4>
+            <p class="card-text">{{ module.content }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+					<a href="{% url module.url %}">View</a>
+				</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">{{ module.title }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
 {% endblock content %}
