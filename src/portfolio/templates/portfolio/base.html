@@ -1,0 +1,83 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Lewis Lloyd">
+    <title>Home - lloyd.cx</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'portfolio/img/favicons/favicon.ico' %}">
+    <link rel="icon" href="{% static 'portfolio/img/favicons/favicon-32x32.png' %}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{% static 'portfolio/img/favicons/favicon-16x16.png' %}" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="{% static 'portfolio/img/favicons/apple-touch-icon.png' %}" sizes="180x180">
+    <meta name="theme-color" content="#202020">
+
+    <!-- Bootstrap CSS and Stylesheets -->
+    <link rel="stylesheet" href="{% static 'portfolio/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/font%20awesome-free-5.11.2-all.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <section class="text-center">
+            <i class="fas fa-meteor" style="font-size:64px"></i>
+            <h1>lloyd.cx</h1>
+        </section>
+      </div>
+      <div class="container">
+        <section class="text-center">
+          <p class="text-muted">
+            <a href="{% url 'portfolio-index' %}">Home</a>
+            |
+            <a href="">Portfolio</a>
+            |
+            <a href="">Education</a>
+            |
+            <a href="">Skills</a>
+            |
+            <a href="">Blog</a>
+          </p>
+        </section>
+      </div>
+      <div class="container">
+        <section>
+          <div id="gradient-top"></div>
+        </section>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main role="main">
+      <div class="container">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <section class="text-center">
+          <div id="gradient-bottom"></div>
+          <p>
+            <a href="https://github.com/LloydTao" target="_blank">GitHub</a>
+            -
+            <a href="https://twitter.com/LloydTao" target="_blank">Twitter</a>
+            -
+            <a href="https://instagram.com/LloydTao/" target="_blank">Instagram</a>
+            -
+            <a href="https://open.spotify.com/user/11130532873" target="_blank">Spotify</a>
+          </p>
+          <p class="copyright">Lewis Lloyd &copy; 2020</p>
+          <img style="width:23px" src="{% static 'portfolio/img/annoying_dog.gif' %}"/>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
