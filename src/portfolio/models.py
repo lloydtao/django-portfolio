@@ -55,3 +55,6 @@ class Paradigm(models.Model):
         max_length=2,
         choices=PARADIGM_CHOICES,
     )
+
+    def __str__(self):
+        return self.get_paradigm_display()
