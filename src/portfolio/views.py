@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView
-from .models import Module, Project, Skill, Education
+from .models import Module, Project, Skill, Education, Paradigm
 
 # Create your views here.
 def index(request):
@@ -28,18 +28,9 @@ class SkillsFeedView(ListView):
     context_object_name = 'paradigms'
 
     def get_queryset(self):
-        queryset = {
-            'Software Engineering': Skill.objects.filter(paradigm='SE'),
-            'Web Development':      Skill.objects.filter(paradigm='WD'),
-            'Graphics and Media':   Skill.objects.filter(paradigm='GM'),
-            'Frameworks':           Skill.objects.filter(paradigm='FW'),
-        }
-        # Paradigms are unlikely to scale, but here's a scalable version.
-        """
+        paradigms = Paradigm.objects.all()
         queryset = {}
-        for paradigm in Skill.PARADIGM_CHOICES:
-            key = paradigm[0]
-            display = paradigm[1]
-            queryset[display] = Skill.objects.filter(paradigm=key)
-        """
+        for paradigm in paradigms:
+            display = paradigm
+            queryset[display] = Skill.objects.filter(paradigm=paradigm.pk)
         return queryset
