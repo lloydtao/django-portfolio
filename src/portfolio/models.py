@@ -38,7 +38,8 @@ class Skill(models.Model):
     @property
     def get_months(self):
         delta: timedelta = now() - self.date
-        return delta.months
+        months = delta.days / (365.2425/12)
+        return round(months, 1)
 
     def __str__(self):
         return 'Skill: ' + self.title
