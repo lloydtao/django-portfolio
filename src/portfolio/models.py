@@ -9,11 +9,17 @@ class Module(models.Model):
     url     = models.CharField(max_length=64)
     content = models.CharField(max_length=128)
 
+    def __str__(self):
+        return 'Module: ' + self.title
+
 class Project(models.Model):
     title   = models.CharField(max_length=64)
     icon    = models.CharField(max_length=64)
     url     = models.CharField(max_length=64)
     content = models.CharField(max_length=128)
+
+    def __str__(self):
+        return 'Project: ' + self.title
 
 class Skill(models.Model):
     title   = models.CharField(max_length=64)
@@ -34,8 +40,14 @@ class Skill(models.Model):
         delta: timedelta = now() - self.date
         return delta.months
 
+    def __str__(self):
+        return 'Skill: ' + self.title
+
 class Education(models.Model):
     title   = models.CharField(max_length=64)
     icon    = models.CharField(max_length=64)
     url     = models.CharField(max_length=64)
     content = models.CharField(max_length=128)
+
+    def __str__(self):
+        return 'Education: ' + self.title
