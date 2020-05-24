@@ -18,7 +18,17 @@ class Project(models.Model):
 class Skill(models.Model):
     title   = models.CharField(max_length=64)
     date    = models.date = models.DateTimeField(default=timezone.now)
-    content = models.CharField(max_length=128)
+    PARADIGM_CHOICES = (
+        ('SE', 'Software Engineering'),
+        ('WD', 'Web Development'),
+        ('GM', 'Graphics and Media'),
+        ('FW', 'Frameworks'),
+    )
+    paradigm = models.CharField(
+        max_length=2,
+        choices=PARADIGM_CHOICES,
+        default='SE',
+    )
     @property
     def get_months(self):
         delta: timedelta = now() - self.date
