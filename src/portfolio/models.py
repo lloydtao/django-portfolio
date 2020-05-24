@@ -1,5 +1,7 @@
+from datetime import timedelta
 from django.db import models
 from django.utils import timezone
+from django.utils.timezone import now  
 
 class Module(models.Model):
     title   = models.CharField(max_length=64)
@@ -17,6 +19,10 @@ class Skill(models.Model):
     title   = models.CharField(max_length=64)
     date    = models.date = models.DateTimeField(default=timezone.now)
     content = models.CharField(max_length=128)
+    @property
+    def get_months(self):
+        delta: timedelta = now() - self.date
+        return delta.months
 
 class Education(models.Model):
     title   = models.CharField(max_length=64)
