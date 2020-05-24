@@ -14,9 +14,17 @@ body {
     margin: 0 auto;
 }
 
+body i {
+	font-size: 32px;
+}
+
 header	{
     margin: 16px;
     display: block;
+}
+
+header i {
+	font-size:64px;
 }
 
 footer	{
