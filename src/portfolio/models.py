@@ -10,7 +10,7 @@ class Module(models.Model):
     content = models.CharField(max_length=128)
 
     def __str__(self):
-        return 'Module: ' + self.title
+        return self.title
 
 class Project(models.Model):
     title   = models.CharField(max_length=64)
@@ -19,7 +19,7 @@ class Project(models.Model):
     content = models.CharField(max_length=128)
 
     def __str__(self):
-        return 'Project: ' + self.title
+        return self.title
 
 class Skill(models.Model):
     title       = models.CharField(max_length=64)
@@ -32,7 +32,7 @@ class Skill(models.Model):
         return months
 
     def __str__(self):
-        return 'Skill: ' + self.title
+        return self.title
 
 class Education(models.Model):
     title   = models.CharField(max_length=64)
@@ -41,7 +41,7 @@ class Education(models.Model):
     content = models.CharField(max_length=128)
 
     def __str__(self):
-        return 'Education: ' + self.title
+        return self.title
 
 class Paradigm(models.Model):
     icon    = models.CharField(max_length=64)
