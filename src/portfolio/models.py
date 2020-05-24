@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Module(models.Model):
     title   = models.CharField(max_length=64)
@@ -14,7 +15,7 @@ class Project(models.Model):
 
 class Skill(models.Model):
     title   = models.CharField(max_length=64)
-    icon    = models.CharField(max_length=64)
+    date    = models.date = models.DateTimeField(default=timezone.now)
     url     = models.CharField(max_length=64)
     content = models.CharField(max_length=128)
 
